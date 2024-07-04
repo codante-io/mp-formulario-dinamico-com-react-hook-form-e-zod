@@ -64,13 +64,13 @@ A documentação da API está em <a target="_blank" href="https://apis-docs.coda
 
 **Implementação de validação server-side**
 
-Além da validação client-side, a nossa API [] também implementa uma validação *server-side*. Um exemplo que pode ser explorado é o caso do campo `cpf`: na validação *client-side* vamos checar apenas o "formato" do CPF, enquanto na validação *server-side* da API também checamos se o CPF é válido pelo seu dígito verificador.
+Além da validação client-side, a nossa **API** também implementa uma validação *server-side*. Um exemplo que pode ser explorado é o caso do campo `cpf`: na validação *client-side* vamos checar apenas o "formato" do CPF, enquanto na validação *server-side* da API também checamos se o CPF é válido pelo seu dígito verificador.
 
 - Implemente, além da validação *client-side*, também as mensagens de erro de validação retornadas pela API.
 
 ## 🔨 Desafio extra para quem quer ir além
 
-- Crie uma mensagem de sucesso quando a resposta da API for...
+- Crie uma mensagem de sucesso quando a resposta da API for `200`.
 
 ## 🎨 Design Sugerido
 
