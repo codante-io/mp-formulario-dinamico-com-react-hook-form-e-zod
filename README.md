@@ -2,6 +2,8 @@
 
 Fazer um formulário na vida real nem sempre é uma tarefa trivial. Nuances como validação, mensagens de erro e máscaras de preenchimento tornam o processo um pouco menos intuitivo. Neste Mini Projeto, você vai aprender a criar um formulário de cadastro dinâmico usando React Hook Form e Zod para facilitar o desenvolvimento.
 
+React Hook Form e Zod são, respectivamente, as principais ferramentas da indústria para gerenciamento de formulários no React e validação _client_ e _server side_.
+
 O formulário de cadastro terá como funcionalidades:
 
 - Validação e erros diretamente no cliente
