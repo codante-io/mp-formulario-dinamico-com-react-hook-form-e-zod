@@ -16,7 +16,7 @@ Tudo isso usando React, React Hook Forms e Zod.
 
 ## 🤓 Antes de começar
 
-O design e a UI do front-end já estão implementados! O objetivo aqui é conseguir fazer as funcionalidades do formulário, bem como aprender as bibliotecas React Hook Form e Zod.
+O design e a UI do front-end já estão implementados _em um projeto Vite_! O objetivo aqui é conseguir fazer as funcionalidades do formulário, bem como aprender as bibliotecas React Hook Form e Zod.
 
 Para isso, basta fazer um fork, clonar o código para a sua máquina, instalar as dependências e rodar `pnpm run dev` ou `npm run dev`!
 
@@ -44,7 +44,7 @@ A documentação da API está em <a target="_blank" href="https://apis-docs.coda
 - Após preenchido o CEP, busque em alguma API de CEP os dados de logradouro e cidade.
 - Preencha os inputs de endereço e cidade com os dados retornados.
 
-> [!NOTE]
+> [!NOTE]  
 > Antes de implementar sua solução, pense em qual será o melhor evento para ser escutado neste input.
 
 **Uso da Biblioteca React Hook Form e Zod**
@@ -63,6 +63,9 @@ A documentação da API está em <a target="_blank" href="https://apis-docs.coda
     - `address`: obrigatório, máximo de 255 caracteres.
     - `city`: obrigatório, máximo de 255 caracteres.
 - Todos os dados devem ser submetidos de uma vez só para o endpoint da API do Codante.
+
+> [!NOTE]  
+> Zod é uma biblioteca de validação que funciona tanto no _node_ como em _browsers_. Esse projeto é um SPA, o que significa que iremos usar apenas no _browser (client side)._ 
 
 **Implementação de validação server-side**
 
