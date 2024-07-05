@@ -1,5 +1,5 @@
 // import { EyeIcon } from 'lucide-react';
-import { EyeIcon, EyeOffIcon } from 'lucide-react';
+import { EyeIcon } from 'lucide-react';
 
 function App() {
   return (
@@ -22,6 +22,10 @@ function App() {
               id="name"
               className="w-full p-2 rounded-xl text-slate-600 px-3 border border-slate-400 bg-transparent focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-opacity-50"
             />
+            {/* Sugestão de exibição de erro de validação */}
+            <div className="min-h-4">
+              <p className="text-xs text-red-400 mt-1">O nome é obrigatório.</p>
+            </div>
           </div>
           <div className="mb-4">
             <label
@@ -73,11 +77,10 @@ function App() {
               />
               <span className="absolute right-3 top-3">
                 <EyeIcon size={20} className="text-slate-600 cursor-pointer" />
-
-                <EyeOffIcon
+                {/* <EyeOffIcon
                   className="text-slate-600 cursor-pointer"
                   size={20}
-                />
+                /> */}
               </span>
             </div>
           </div>
