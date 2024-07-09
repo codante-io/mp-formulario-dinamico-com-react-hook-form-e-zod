@@ -52,16 +52,16 @@ A documentação da API está em <a target="_blank" href="https://apis-docs.coda
 - Todo o formulário deverá ser "regido" pela biblioteca `React Hook Form`.
 - A validação deverá ser "regida" pela biblioteca `Zod`.
 - A validação dos dados deverá ocorrer no front-end de acordo com as regras estipuladas:
-    - `name`: obrigatório, máximo de 255 caracteres.
-    - `email`: obrigatório, deve ser um e-mail válido, máximo de 255 caracteres.
-    - `password`: obrigatório, mínimo de 8 caracteres, máximo de 255 caracteres.
-    - `password_confirmation`: obrigatório, mínimo de 8 caracteres, máximo de 255 caracteres.
+    - `name`: obrigatório.
+    - `email`: obrigatório, deve ser um e-mail válido.
+    - `password`: obrigatório, mínimo de 8 caracteres.
+    - `password_confirmation`: obrigatório, mínimo de 8 caracteres.
     - `terms`: obrigatório, deve ser um booleano.
     - `phone`: obrigatório, máximo de 20 caracteres.
     - `cpf`: obrigatório, máximo de 14 caracteres, deve seguir o padrão 000.000.000-00, deve ser um CPF válido.
     - `zipcode`: obrigatório, máximo de 9 caracteres, deve seguir o padrão 00000-000.
-    - `address`: obrigatório, máximo de 255 caracteres.
-    - `city`: obrigatório, máximo de 255 caracteres.
+    - `address`: obrigatório.
+    - `city`: obrigatório.
 - Todos os dados devem ser submetidos de uma vez só para o endpoint da API do Codante.
 
 > [!NOTE]  
