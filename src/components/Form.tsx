@@ -1,8 +1,8 @@
 import { EyeIcon } from 'lucide-react';
-// import { EyeOffIcon } from 'lucide-react';
+import { EyeOffIcon } from 'lucide-react';
 
 // hooks
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 
 export default function Form() {
@@ -17,8 +17,15 @@ export default function Form() {
   // const [endereco, setEndereco] = useState("")
   // const [cidade, setCidade] = useState("")
 
-  console.log(name,email,password);
-  
+
+  // mudar senha
+  const [changePassword, setChangePassword] = useState(true);
+  const changeIcon = changePassword === true ? false : true;
+
+
+  // mudar confirmar senha
+  const [changeConfirmPassword, setChangeConfirmPassword] = useState(true);
+  const changeConfirmIcon = changeConfirmPassword === true ? false : true;
 
 
   return (
@@ -38,9 +45,17 @@ export default function Form() {
       <div className="mb-4">
         <label htmlFor="password">Senha</label>
         <div className="relative">
-          <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+
+          <input type={changePassword ? "password" : "text"} id="password" value={password} onChange={(e) => setPassword(e.target.value)}  />
           <span className="absolute right-3 top-3">
-            <EyeIcon size={20} className="text-slate-600 cursor-pointer" />
+          {changePassword ? (
+              <EyeIcon size={20} className="text-slate-600 cursor-pointer" onClick={() => setChangePassword(changeIcon)} />
+            ) : (
+              <EyeOffIcon size={20} className="text-slate-600 cursor-pointer" onClick={() => setChangePassword(changeIcon)} />
+            )}
+            {/* <EyeIcon size={20} className="text-slate-600 cursor-pointer" onClick={() => {
+                    setChangePassword(changeIcon);
+                 }}/>  */}
             {/* <EyeOffIcon
                       className="text-slate-600 cursor-pointer"
                       size={20}
@@ -51,9 +66,15 @@ export default function Form() {
       <div className="mb-4">
         <label htmlFor="confirm-password">Confirmar Senha</label>
         <div className="relative">
-          <input type="password" id="confirm-password"  value={confirmPassword} onChange={(e) => setConfirmPassoword(e.target.value)}/>
+
+          <input type={changeConfirmPassword ? "password" : "text"} id="confirm-password"  value={confirmPassword} onChange={(e) => setConfirmPassoword(e.target.value)}/>
           <span className="absolute right-3 top-3">
-            <EyeIcon size={20} className="text-slate-600 cursor-pointer" />
+          {changeConfirmPassword ? (
+              <EyeIcon size={20} className="text-slate-600 cursor-pointer" onClick={() => setChangeConfirmPassword(changeConfirmIcon)} />
+            ) : (
+              <EyeOffIcon size={20} className="text-slate-600 cursor-pointer" onClick={() => setChangeConfirmPassword(changeConfirmIcon)} />
+            )}
+            {/* <EyeIcon size={20} className="text-slate-600 cursor-pointer" /> */}
             {/* <EyeOffIcon
                   className="text-slate-600 cursor-pointer"
                   size={20}
