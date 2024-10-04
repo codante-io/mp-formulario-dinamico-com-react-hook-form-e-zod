@@ -67,21 +67,21 @@ export default function Form() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-4">
-        <label htmlFor="name">Nome Completo</label>
+        <label htmlFor="name">Full Name</label>
         <input type="text" id="name" {...register('name')} />
         <p className="mt-1 text-xs text-red-400">
           <ErrorMessage errors={errors} name="name" />
         </p>
       </div>
       <div className="mb-4">
-        <label htmlFor="email">E-mail</label>
+        <label htmlFor="email">Email</label>
         <input className="" type="email" id="email" {...register('email')} />
         <p className="mt-1 text-xs text-red-400">
           <ErrorMessage errors={errors} name="email" />
         </p>
       </div>
       <div className="mb-4">
-        <label htmlFor="password">Senha</label>
+        <label htmlFor="password">Password</label>
         <div className="relative">
           <input
             type={isPasswordVisible ? 'text' : 'password'}
@@ -109,7 +109,7 @@ export default function Form() {
         </div>
       </div>
       <div className="mb-4">
-        <label htmlFor="confirm-password">Confirmar Senha</label>
+        <label htmlFor="confirm-password">Confirm Password</label>
         <div className="relative">
           <input
             type={isPasswordVisible ? 'text' : 'password'}
@@ -137,7 +137,7 @@ export default function Form() {
         </div>
       </div>
       <div className="mb-4">
-        <label htmlFor="phone">Telefone Celular</label>
+        <label htmlFor="phone">Cell Phone</label>
         <input
           type="text"
           id="phone"
@@ -148,7 +148,7 @@ export default function Form() {
         </p>
       </div>
       <div className="mb-4">
-        <label htmlFor="cpf">CPF</label>
+        <label htmlFor="cpf">Brazilian ID (CPF)</label>
         <input
           type="text"
           id="cpf"
@@ -159,7 +159,7 @@ export default function Form() {
         </p>
       </div>
       <div className="mb-4">
-        <label htmlFor="cep">CEP</label>
+        <label htmlFor="cep">Postal Code (ZIP Code)</label>
         <input
           type="text"
           id="cep"
@@ -172,7 +172,7 @@ export default function Form() {
         </p>
       </div>
       <div className="mb-4">
-        <label htmlFor="address">Endereço</label>
+        <label htmlFor="address">Address</label>
         <input
           className="disabled:bg-slate-200"
           type="text"
@@ -186,7 +186,7 @@ export default function Form() {
         </p>
       </div>
       <div className="mb-4">
-        <label htmlFor="city">Cidade</label>
+        <label htmlFor="city">City</label>
         <input
           className="disabled:bg-slate-200"
           type="text"
@@ -198,7 +198,7 @@ export default function Form() {
           <ErrorMessage errors={errors} name="city" />
         </p>
       </div>
-      {/* terms and conditions input */}
+
       <div className="mb-4">
         <input
           type="checkbox"
@@ -210,9 +210,9 @@ export default function Form() {
           className="inline mb-1 text-sm font-light text-slate-500"
           htmlFor="terms"
         >
-          Aceito os{' '}
+          I agree{' '}
           <span className="underline cursor-pointer hover:text-slate-900">
-            termos e condições
+          to the terms and conditions
           </span>
         </label>
         <p className="mt-1 text-xs text-red-400">
@@ -224,7 +224,7 @@ export default function Form() {
         disabled={isSubmitting}
         className="flex items-center justify-center w-full p-4 mt-10 font-semibold text-white transition-colors bg-slate-500 rounded-xl hover:bg-slate-600 disabled:bg-slate-300"
       >
-        {isSubmitting ? <Loader className="animate-spin" /> : 'Cadastrar'}
+        {isSubmitting ? <Loader className="animate-spin" /> : 'Register'}
       </button>
     </form>
   );
