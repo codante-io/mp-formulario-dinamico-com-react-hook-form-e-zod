@@ -95,3 +95,7 @@ In this Mini Project, you won't need to implement any design - we have already d
 ## Prerequisites
 
 - Basic/intermediate React
+
+### Deploy
+
+🔗 [Link](https://dynamic-form-with-react-hook-form-zod.netlify.app/)
