@@ -4,6 +4,16 @@ Creating a real-world form is not always a trivial task. Nuances such as validat
 
 React Hook Form and Zod are, respectively, the main industry tools for form management in React and client- and server-side validation.
 
+## 📸 Project Preview
+
+Here are some screenshots of the project to give you an idea of what the form looks like:
+
+![Form Screenshot 1](docs-screenshots/Sign-Up.png)
+*Figure 1: The form's main view.*
+
+![Form Screenshot 2](docs-screenshots/Error-Messages.png)
+*Figure 2: An example of a form validation error.*
+
 All of this is using React, React Hook Form, and Zod.
 
 > **Note**: While the APIs used in this project are designed to work with Brazilian data formats (such as CPF and ZIP code), the form and code are written in English to make the project more accessible and understandable to a wider audience, including potential international collaborators or recruiters. The use of English as the primary language for the form aligns with global development standards and ensures the content is more universally accessible.
