@@ -4,21 +4,6 @@ Creating a real-world form is not always a trivial task. Nuances such as validat
 
 React Hook Form and Zod are, respectively, the main industry tools for form management in React and client- and server-side validation.
 
-## 📸 Project Preview
-
-Here are some screenshots of the project to give you an idea of what the form looks like:
-
-<div style="display: flex; justify-content: space-around;">
-  <div style="text-align: center;">
-    <img src="docs-screenshots/Sign-Up.png" alt="Form Screenshot 1" width="260"/>
-    <p><em>Figure 1: The form's main view.</em></p>
-  </div>
-  <div style="text-align: center;">
-    <img src="docs-screenshots/Error-Messages.png" alt="Form Screenshot 2" width="260"/>
-    <p><em>Figure 2: An example of a form validation error.</em></p>
-  </div>
-</div>
-
 All of this is using React, React Hook Form, and Zod.
 
 > **Note**: While the APIs used in this project are designed to work with Brazilian data formats (such as CPF and ZIP code), the form and code are written in English to make the project more accessible and understandable to a wider audience, including potential international collaborators or recruiters. The use of English as the primary language for the form aligns with global development standards and ensures the content is more universally accessible.
@@ -44,9 +29,6 @@ The API documentation is available at <a target="_blank" href="https://apis-docs
 - Create a button that, when clicked, shows or hides the passwords directly on the form.
 - This button should be an icon representing whether the password is hidden or revealed (an icon suggestion is already in the code).
 - The button should at least be accessible via keyboard (it should be possible to navigate to it using the `tab` key).
-
-![Password Toggle Button](path/to/your/password-toggle.png)
-*Figure 3: Password toggle button with hide/show functionality.*
 
 **Phone, ID, and ZIP code masks**
 
