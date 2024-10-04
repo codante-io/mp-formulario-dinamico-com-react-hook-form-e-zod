@@ -5,9 +5,10 @@
 input[type='text'],
 input[type='password'],
 input[type='email'] {
-  @apply w-full p-2 rounded-xl text-slate-600 px-3 border border-slate-400 bg-transparent focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-opacity-50;
+  @apply w-full p-2 rounded-xl text-gray-800 px-3 border border-blue-400 bg-white 
+         focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50;
 }
 
 label {
-  @apply text-sm font-light text-slate-500 mb-1 block;
+  @apply text-sm font-medium text-gray-800 mb-1 block;
 }
