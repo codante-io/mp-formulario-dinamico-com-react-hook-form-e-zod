@@ -56,10 +56,10 @@ export default function Form() {
           message: resData.errors[field],
         });
       }
-      toast.error('Erro ao cadastrar usuário');
+      toast.error('Failed to register user');
     } else {
       console.log(resData);
-      toast.success('Usuário cadastrado com sucesso');
+      toast.success('User registered successfully');
       reset();
     }
   }
