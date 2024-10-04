@@ -1,101 +1,105 @@
-# Formulário Dinâmico com React Hook Form e Zod
+# Dynamic Form with React Hook Form and Zod
 
-Fazer um formulário na vida real nem sempre é uma tarefa trivial. Nuances como validação, mensagens de erro e máscaras de preenchimento tornam o processo um pouco menos intuitivo. Neste Mini Projeto, você vai aprender a criar um formulário de cadastro dinâmico usando React Hook Form e Zod para facilitar o desenvolvimento.
+Creating a real-world form is not always a trivial task. Nuances such as validation, error messages, and input masks make the process a bit less intuitive. In this Mini Project, you will learn how to create a dynamic registration form using React Hook Form and Zod to streamline development.
 
-React Hook Form e Zod são, respectivamente, as principais ferramentas da indústria para gerenciamento de formulários no React e validação _client_ e _server side_.
+React Hook Form and Zod are, respectively, the main industry tools for form management in React and client- and server-side validation.
 
-O formulário de cadastro terá como funcionalidades:
+The registration form will include the following features:
 
-- Validação e erros diretamente no cliente
-- Validação e erros provenientes do servidor
-- Botão para esconder/revelar senha
-- Preenchimento automático de endereço e cidade de acordo com o CEP
-- Máscara para telefone celular, CPF e CEP
+- Client-side validation and errors
+- Server-side validation and errors
+- Button to show/hide password
+- Automatic address and city filling based on postal code (ZIP code)
+- Masks for cell phone, ID, and ZIP code
 
-Tudo isso usando React, React Hook Forms e Zod.
+All of this using React, React Hook Form, and Zod.
 
-## 🤓 Antes de começar
+> **Note**: While the APIs used in this project are designed to work with Brazilian data formats (such as CPF and ZIP code), the form and code are written in English to make the project more accessible and understandable to a wider audience, including potential international collaborators or recruiters. The use of English as the primary language for the form aligns with global development standards and ensures the content is more universally accessible.
 
-O design e a UI do front-end já estão implementados _em um projeto Vite_! O objetivo aqui é conseguir fazer as funcionalidades do formulário, bem como aprender as bibliotecas React Hook Form e Zod.
+## 🤓 Before you start
 
-Para isso, basta fazer um fork, clonar o código para a sua máquina, instalar as dependências e rodar `pnpm run dev` ou `npm run dev`!
+The design and UI of the front-end are already implemented _in a Vite project_! The goal here is to build the form functionalities and learn how to use the React Hook Form and Zod libraries.
 
-### A API
+To do so, simply fork the project, clone the code to your machine, install the dependencies, and run `pnpm run dev` or `npm run dev`!
 
-O seu formulário deverá ser submetido para uma API desenvolvida por nós. O endpoint está em `https://apis.codante.io/api/register-user/register`. Esta API irá retornar um código `200` se todos os dados estiverem corretos; ou um `422` caso haja algum erro de validação. Você deverá implementar em seu código também as mensagens de validação retornadas pelo servidor.
+### The API
 
-A documentação da API está em <a target="_blank" href="https://apis-docs.codante.io/register-user">https://apis-docs.codante.io/register-user</a>. Será necessário consultá-la para fazer este Mini Projeto.
+Your form should be submitted to an API developed by us. The endpoint is `https://apis.codante.io/api/register-user/register`. This API will return a `200` status code if all data is correct; or a `422` status code in case of any validation errors. You must also implement the validation messages returned by the server in your code.
 
-## 🔨 Requisitos
+The API documentation is available at <a target="_blank" href="https://apis-docs.codante.io/register-user">https://apis-docs.codante.io/register-user</a>. You will need to refer to it to complete this Mini Project.
 
-**Botão para esconder / revelar senha**
+> **Note**: The API and its validations are based on Brazilian standards, including formats for CPF (Brazilian ID) and ZIP code. This showcases how applications can be adapted to local data requirements, while the use of English in the code base helps to maintain universal readability and aligns with best practices for global software development.
 
-- Crie um botão que, ao clicar, revele ou esconda as senhas diretamente no formulário.
-- Este botão deverá ser um ícone que represente que a senha está escondida ou revelada (no código já há uma sugestão de ícone).
-- O botão deve possuir, no mínimo, a acessibilidade de ser ativado via teclado (deve ser possível navegar até ele usando a tecla `tab`).
+## 🔨 Requirements
 
-**Máscara de telefone, CPF e CEP**
+**Button to hide/reveal password**
 
-- Implemente, do zero ou usando uma biblioteca, uma máscara para os inputs de `telefone`, `cpf` e `cep`.
-- Uma sugestão para as máscaras é, respectivamente, `(00) 00000-0000`, `000.000.000-27` e `00000-000`.
+- Create a button that, when clicked, shows or hides the passwords directly on the form.
+- This button should be an icon representing whether the password is hidden or revealed (an icon suggestion is already in the code).
+- The button should at least be accessible via keyboard (it should be possible to navigate to it using the `tab` key).
 
-**Preenchimento automático de Endereço (rua) e Cidade após preenchido o CEP**
+**Phone, ID, and ZIP code masks**
 
-- Após preenchido o CEP, busque em alguma API de CEP os dados de logradouro e cidade.
-- Preencha os inputs de endereço e cidade com os dados retornados.
+- Implement, either from scratch or using a library, masks for the `phone`, `id`, and `zipcode` inputs.
+- Suggestions for the masks are `(00) 00000-0000`, `000.000.000-27`, and `00000-000`, respectively.
 
-> [!NOTE]  
-> Antes de implementar sua solução, pense em qual será o melhor evento para ser escutado neste input.
+**Automatic filling of Address (street) and City after ZIP code is filled**
 
-**Uso da Biblioteca React Hook Form e Zod**
-
-- Todo o formulário deverá ser "regido" pela biblioteca `React Hook Form`.
-- A validação deverá ser "regida" pela biblioteca `Zod`.
-- A validação dos dados deverá ocorrer no front-end de acordo com as regras estipuladas:
-    - `name`: obrigatório.
-    - `email`: obrigatório, deve ser um e-mail válido.
-    - `password`: obrigatório, mínimo de 8 caracteres.
-    - `password_confirmation`: obrigatório, mínimo de 8 caracteres.
-    - `terms`: obrigatório, deve ser um booleano.
-    - `phone`: obrigatório, máximo de 20 caracteres.
-    - `cpf`: obrigatório, máximo de 14 caracteres, deve seguir o padrão 000.000.000-00, deve ser um CPF válido.
-    - `zipcode`: obrigatório, máximo de 9 caracteres, deve seguir o padrão 00000-000.
-    - `address`: obrigatório.
-    - `city`: obrigatório.
-- Todos os dados devem ser submetidos de uma vez só para o endpoint da API do Codante.
+- After the ZIP code is entered, use a ZIP code API to retrieve the address and city information.
+- Populate the address and city inputs with the returned data.
 
 > [!NOTE]  
-> Zod é uma biblioteca de validação que funciona tanto no _node_ como em _browsers_. Esse projeto é um SPA, o que significa que iremos usar apenas no _browser (client side)._ 
+> Before implementing your solution, think about which event would be best to listen to on this input.
 
-**Implementação de validação server-side**
+**Using React Hook Form and Zod libraries**
 
-Além da validação client-side, a nossa **API** também implementa uma validação *server-side*. Um exemplo que pode ser explorado é o caso do campo `cpf`: na validação *client-side* vamos checar apenas o "formato" do CPF, enquanto na validação *server-side* da API também checamos se o CPF é válido pelo seu dígito verificador.
+- The entire form should be managed by the `React Hook Form` library.
+- The validation should be handled by the `Zod` library.
+- Data validation should occur on the front-end according to the specified rules:
+    - `name`: required.
+    - `email`: required, must be a valid email.
+    - `password`: required, minimum of 8 characters.
+    - `password_confirmation`: required, minimum of 8 characters.
+    - `terms`: required, must be a boolean.
+    - `phone`: required, maximum of 20 characters.
+    - `id`: required, maximum of 14 characters, must follow the format 000.000.000-00, and must be a valid Brazilian ID (CPF).
+    - `zipcode`: required, maximum of 9 characters, must follow the format 00000-000.
+    - `address`: required.
+    - `city`: required.
+- All data should be submitted at once to the Codante API endpoint.
 
-- Implemente, além da validação *client-side*, também as mensagens de erro de validação retornadas pela API.
+> [!NOTE]  
+> Zod is a validation library that works both in _Node_ and _browsers_. This project is a SPA, which means we will only use it in the _browser (client-side)._ 
 
-## 🔨 Desafio extra para quem quer ir além
+**Implementation of server-side validation**
 
-- Crie uma mensagem de sucesso quando a resposta da API for `200`.
+In addition to client-side validation, our **API** also performs server-side validation. For instance, the `id` field: on the client-side, we will only check the format of the Brazilian ID (CPF), while on the server-side, the API also validates the CPF using its check digits.
 
-## 🎨 Design Sugerido
+- Implement not only client-side validation but also the error messages returned by the API server-side validation.
 
-Neste Mini Projeto, não será preciso implementar nenhum design - já fizemos isso por você.
+## 🔨 Extra challenge for those who want to go further
 
-## 👉🏽 O que você irá praticar:
+- Create a success message when the API response is `200`.
 
-#### Formulários com React Hook Form e Zod
+## 🎨 Suggested Design
 
-- Validação *client-side*
-- Validação *server-side*
-- `schemas` no `zod`
-- Biblioteca `react-hook-form`
+In this Mini Project, you won't need to implement any design - we have already done that for you.
 
-#### Formulários HTML e React
+## 👉🏽 What you will practice:
 
-- Formulários HTML
-- Formulários interativos controlados
-- Eventos em formulários (_blur_, _click_)
+#### Forms with React Hook Form and Zod
 
-## Pré-requisitos
+- Client-side validation
+- Server-side validation
+- `schemas` in `zod`
+- `react-hook-form` library
 
-- React básico/intermediário
+#### HTML and React Forms
+
+- HTML forms
+- Controlled interactive forms
+- Form events (_blur_, _click_)
+
+## Prerequisites
+
+- Basic/intermediate React
