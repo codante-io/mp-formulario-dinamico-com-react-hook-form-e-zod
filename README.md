@@ -99,3 +99,7 @@ In this Mini Project, you won't need to implement any design - we have already d
 ### Deploy
 
 🔗 [Link](https://dynamic-form-with-react-hook-form-zod.netlify.app/)
+
+### Deploy
+
+<a href="https://https://dynamic-form-with-react-hook-form-zod.netlify.app/" target="_blank">Link</a>
