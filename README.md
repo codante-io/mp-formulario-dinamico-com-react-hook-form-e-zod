@@ -8,10 +8,10 @@ React Hook Form and Zod are, respectively, the main industry tools for form mana
 
 Here are some screenshots of the project to give you an idea of what the form looks like:
 
-![Form Screenshot 1](docs-screenshots/Sign-Up.png)
+<img src="docs-screenshots/Sign-Up.png" alt="Form Screenshot 1" width="260" />
 *Figure 1: The form's main view.*
 
-![Form Screenshot 2](docs-screenshots/Error-Messages.png)
+<img src="docs-screenshots/Error-Messages.png" alt="Form Screenshot 2" width="260" />
 *Figure 2: An example of a form validation error.*
 
 All of this is using React, React Hook Form, and Zod.
