@@ -10,9 +10,11 @@ export const userRegisterSchema = z
     password: z
       .string()
       .min(8, { message: 'The password must be at least 8 characters' }),
-    password_confirmation: z.string().min(8, {
-      message: 'The confirmation password must be at least 8 characters',
-    }),
+    password_confirmation: z
+      .string()
+      .min(8, {
+        message: 'The confirmation password must be at least 8 characters',
+      }),
     phone: z
       .string()
       .min(1, { message: 'The phone field is required' })
@@ -24,18 +26,14 @@ export const userRegisterSchema = z
     zipcode: z
       .string()
       .min(1, { message: 'The ZIP code field is required' })
-      .regex(/^\d{5}-\d{3}$/, 'Invalid ZIP code'),
-    city: z
-      .string()
-      .min(1, { message: 'The city field is required' }),
-    address: z
-      .string()
-      .min(1, { message: 'The address field is required' }),
-    terms: z.boolean({ message: 'You need to accept the terms of use' }),
+      .regex(/^\d{5}-\d{3}$/, { message: 'Invalid ZIP code' }),
+    city: z.string().min(1, { message: 'The city field is required' }),
+    address: z.string().min(1, { message: 'The address field is required' }),
+    terms: z.literal(true, {
+      errorMap: () => ({ message: 'You need to accept the terms of use' }),
+    }),
   })
-  .refine((data) => {
-    return data.password === data.password_confirmation
-  }, {
+  .refine((data) => data.password === data.password_confirmation, {
     message: 'The passwords must match',
     path: ['password_confirmation'],
   });
